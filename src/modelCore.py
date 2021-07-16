@@ -476,6 +476,18 @@ def train_model(csv_file,ep,lr):
     epochs=ep
     batch_size= 20
     
+    #------------------------
+    #saveBestModel = keras.callbacks.ModelCheckpoint(path + '/best_weight_glove_bi_100d.hdf5', monitor='val_acc', 
+                                                    #verbose=0, save_best_only=True,save_weights_only=False, 
+                                                    #mode='auto', save_freq=1) #period deprecated, use save_freq
+    #earlyStopping= keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience=3, verbose=0, mode='auto')
+    
+    #model.fit(train_x, train_y, batch_size , epochs=25, validation_data=(val_x, val_y), callbacks=[saveBestModel, earlyStopping])
+    
+    
+    #------------------------
+    
+    
     #fit del modello
     history = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, validation_data=(X_val, Y_val),verbose=2)
     #plottino
