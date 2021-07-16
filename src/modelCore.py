@@ -473,7 +473,7 @@ def train_model(csv_file,ep,lr):
     X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.20, random_state=5)
     
     #compile
-     model.compile(loss='binary_crossentropy',
+    model.compile(loss='binary_crossentropy',
                   optimizer=optimizers.RMSprop(lr=lr),
                   metrics=['accuracy'])
         
