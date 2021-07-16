@@ -481,8 +481,8 @@ def train_model(csv_file, data_dir, ep,lr):
         X.append(array(Read_image(data_dir + '/' + row[0]).resize((100, 100))).flatten() / 255.0)
         Y.append(array(Read_image(data_dir + '/' + row[1]).resize((100, 100))).flatten() / 255.0)
 
-    #X = np.array(X)
-    #Y = to_categorical(Y, 2)
+    X = np.array(X)
+    Y = to_categorical(Y, 2)
     #X = X.reshape(-1, 100, 100, 3)
 
     X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.20, random_state=5)
