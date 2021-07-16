@@ -479,7 +479,7 @@ def train_model(csv_file, data_dir, ep,lr):
     dataset = pd.read_csv(csv_file)
     for index, row in dataset.iterrows():
         X.append(array(Read_image(data_dir + '/' + row[0]).resize((100, 100))).flatten() / 255.0)
-        Y.append(row[1])
+        Y.append(array(Read_image(data_dir + '/' + row[1]).resize((100, 100))).flatten() / 255.0)
 
     X = np.array(X)
     Y = to_categorical(Y, 2)
