@@ -484,10 +484,12 @@ def train_model(csv_file, data_dir, ep,lr):
     X = np.array(X)
     Y = to_categorical(Y, 2)
     X = X.reshape(-1, 100, 100, 3)
-
-    X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.20, random_state=5)
     
-    print(X_train)
+    print(X.shape)
+    print(Y.shape)
+    
+    X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.20, random_state=5)
+   
     
     model = create_model(2,False,[10,21,43])
     
