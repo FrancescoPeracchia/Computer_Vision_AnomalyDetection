@@ -19,7 +19,7 @@ from keras.legacy import interfaces
 from keras.engine import InputSpec
 import tensorflow as tf
 import numpy as np 
-import hdf5
+import h5py
 
 #################################################################################
 # Model Utils for Image Manipulation Classification
