@@ -483,6 +483,10 @@ def train_model(csv_file, data_dir, ep,lr):
 
     X = np.array(X)
     Y = to_categorical(Y, 2)
+    
+    print(X.shape)
+    print(Y.shape)
+    
     X = X.reshape(-1, 100, 100, 3)
     Y = Y.reshape(-1, 100, 100, 3)
     
