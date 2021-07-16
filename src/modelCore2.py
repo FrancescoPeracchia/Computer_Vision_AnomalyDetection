@@ -466,7 +466,7 @@ def load_pretrain_model_by_index( pretrain_index, model_dir ) :
     single_gpu_model.load_weights( weight_file )
     return single_gpu_model
 
-def train_model(csv_file,ep,lr):
+def train_model(csv_file, data_dir, ep,lr):
     
     #preparazione delle robe 
     def Read_image(path):
@@ -478,7 +478,7 @@ def train_model(csv_file,ep,lr):
     
     dataset = pd.read_csv(csv_file)
     for index, row in dataset.iterrows():
-        X.append(array(Read_image(row[0]).resize((100, 100))).flatten() / 255.0)
+        X.append(array(Read_image(data_dir + '/' + row[0]).resize((100, 100))).flatten() / 255.0)
         Y.append(row[1])
 
     X = np.array(X)
