@@ -19,6 +19,7 @@ from keras.legacy import interfaces
 from keras.engine import InputSpec
 import tensorflow as tf
 import numpy as np 
+import pandas as pd
 import h5py
 
 #################################################################################
