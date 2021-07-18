@@ -795,6 +795,8 @@ def check_forgery(model,img_path='./example.jpg',device=device):
     plt.subplot(1,3,3)
     plt.imshow((final_output[0][0].unsqueeze(2)>0.2)*torch.tensor(original_image))
     plt.title('Suspicious regions detected')
+    
+    return final_output[0][0]).cpu().detach()
 
 class ForgeryDetector(pl.LightningModule):
     
