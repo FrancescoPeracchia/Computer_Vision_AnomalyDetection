@@ -784,17 +784,7 @@ def check_forgery(model,img_path='./example.jpg',device=device):
     with torch.no_grad():
         final_output = model(im)
 
-    plt.subplot(1,3,1)
-    plt.imshow(original_image)
-    plt.title('Original image')
 
-    plt.subplot(1,3,2)
-    plt.imshow((final_output[0][0]).cpu().detach(), cmap='gray')
-    plt.title('Predicted forgery mask')
-    
-    plt.subplot(1,3,3)
-    plt.imshow((final_output[0][0].unsqueeze(2)>0.2)*torch.tensor(original_image))
-    plt.title('Suspicious regions detected')
     
     return final_output
 
